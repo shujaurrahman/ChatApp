@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include_once "config.php";
+    include_once "../assets/config.php";
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     if(!empty($email) && !empty($password)){
@@ -9,7 +9,8 @@
             $row = mysqli_fetch_assoc($sql);
             $user_pass = md5($password);
             $enc_pass = $row['password'];
-            if($user_pass === $enc_pass){
+            $activation=$row['code'];
+            if($user_pass === $enc_pass && $activation==0){
                 $status = "Active now";
                 $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$row['unique_id']}");
                 if($sql2){
@@ -19,7 +20,7 @@
                     echo "Something went wrong. Please try again!";
                 }
             }else{
-                echo "Email or Password is Incorrect!";
+                echo "Email or Password is Incorrect! or Not activated";
             }
         }else{
             echo "$email - This email not Exist!";

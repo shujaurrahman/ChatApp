@@ -1,8 +1,8 @@
 <?php 
   session_start();
-  include_once "../partials/conn.php";
+  include_once "../assets/config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: ../index.php");
+    header("location: ../index.html");
   }
 ?>
 <?php include_once "header.php"; ?>
@@ -18,16 +18,19 @@
             }
           ?>
           <?php  
-          $admin=$_SESSION['unique_id'];
+          // $admin=$_SESSION['unique_id'];
          
-           require "../userimages/profileImagefetch.php";
-                            echo $profilepic;                ?>
+          //  require "../userimages/profileImagefetch.php";
+          //                   echo $profilepic;     
+          // '<img src= "../assets/images/'.$row['img'].'"alt="">'
+                     ?>
+          <img src="../assets/images/<?php echo $row['img']; ?>" alt="">
           <div class="details">
             <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="../index.php" class="logout">Go Back</a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
       <div class="search">
         <span class="text">Select an user to start chat</span>

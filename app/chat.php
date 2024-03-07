@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  include_once "../partials/conn.php";
+  include_once "../assets/config.php";
   if(!isset($_SESSION['unique_id'])){
     header("location: ../index.php");
   }
@@ -21,7 +21,7 @@
           }
         ?>
         <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-        <img src="../userimages/<?php echo $row['img']; ?>" alt="">
+        <img src="../assets/images/<?php echo $row['img']; ?>" alt="">
         <div class="details">
           <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
           <p><?php echo $row['status']; ?></p>
@@ -33,8 +33,7 @@
         $outgoing_id = $_SESSION['unique_id'];
         if(isset($_GET) and isset($_GET['clearChat'])){
              
-             $sql="SELECT *
-             FROM messages
+             $sql="SELECT * FROM messages
              WHERE 
              (`outgoing_msg_id`={$outgoing_id} AND `incoming_msg_id`='$user_id')
              OR
@@ -43,7 +42,7 @@
              $result=mysqli_query($conn,$sql);
              while($row=mysqli_fetch_array($result)){
                $image=$row['media'];
-               unlink("media/$image");
+               unlink("../assets/media/$image");
              }
 
              $sql2="DELETE

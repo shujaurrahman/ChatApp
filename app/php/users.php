@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once "../../partials/conn.php";
+    include_once "../../assets/config.php";
     $outgoing_id = $_SESSION['unique_id'];
     $sql = "SELECT * FROM users WHERE NOT unique_id = {$outgoing_id} ORDER BY user_id DESC";
     $query = mysqli_query($conn, $sql);

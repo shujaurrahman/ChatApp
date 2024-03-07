@@ -23,24 +23,29 @@
   <body>
 
     <div class="wrapper">
+    <section class="form login">
     <div id="login">
         <div id="formLogin">
 
             <h1>Sign In →
             </h1>
 
-            <div class="inputContainer">
-                <input type="text" class="inputLogin" placeholder=" ">
-                <label class="labelLogin">Email</label>
-            </div>
+          <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="error-text"></div>
+                  <div class="inputContainer">
+                      <input type="text" class="inputLogin" placeholder=" " name="email">
+                      <label class="labelLogin">Email</label>
+                  </div>
 
-            <div class="inputContainer">
-                <input type="password" class="inputLogin" placeholder=" ">
-                <label class="labelLogin">Password</label>
-            </div>
+                  <div class="inputContainer">
+                      <input type="password" class="inputLogin" placeholder=" " name="password">
+                      <label class="labelLogin">Password</label>
+                  </div>
 
-            <input type="submit" class="submitButton" value="Sign In">
-
+                  <div class="field button">
+                  <input type="submit" class="submitButton" value="Sign In">
+                  </div>
+          </form>
 
             <div class="register">
             <span class="breaker">
@@ -57,11 +62,8 @@
 
         </div>
     </div>
+  </section>
   </div>
   </body>
-
-  <?php
-
-?>
-  <script src="../js/index.js"></script>
+  <script src="../assets/js/login.js"></script>
 </html>

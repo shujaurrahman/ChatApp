@@ -1,27 +1,22 @@
 <?php 
     session_start();
-    require "../../partials/conn.php";
+    require "../../assets/config.php";
 $boolLoggedIn = false;
-if (isset($_SESSION) and isset($_SESSION['username'])) {
-	$currentUser = $_SESSION['username'];
-	$boolLoggedIn = true;
+if (isset($_SESSION) and isset($_SESSION['unique_id'])) {
+	$Userid = $_SESSION['unique_id'];
 } else {
-	//   header("Location: ../index.php");
+	  header("Location: ../../index.html");
 }
-if ($boolLoggedIn) {
-	$sql = "SELECT * FROM `alluser` Where username ='$currentUser'";
+if (isset($_SESSION['unique_id'])) {
+	$sql = "SELECT * FROM `users` Where unique_id ='$Userid'";
 	$result = mysqli_query($conn, $sql);
 	$data = mysqli_fetch_object($result);
-	$Dimage = $data->{"_image"};
+	$Dp = $data->{"img"};
 }
-if (empty($Dimage)) {
-	$profilepic= "<img src='../static/img/default.jpg' alt=''>";
-} else {
 
-	$profilepic = "<img src='../userimages/$Dimage' alt='../userimages/deafault.svg'>";
-}
+	$profilepic = "<img src='../assets/images/$Dp' alt='No image'>";
+
     if(isset($_SESSION['unique_id'])){
-        include_once "../../partials/conn.php";
         $outgoing_id = $_SESSION['unique_id'];
         $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
         $output = "";
@@ -40,16 +35,16 @@ if (empty($Dimage)) {
                     </div>
                     ' .$profilepic.' 
                     </div>
-                    <img class="media-out" src="media/'.$row['media'].'" alt="">
+                    <img class="media-out" src="../assets/media/'.$row['media'].'" alt="">
                     ';
                 }else{
                     $output .= '<div class="chat incoming">
-                    <img src="../userimages/'.$row['img'].'" alt="">
+                    <img src="../assets/images/'.$row['img'].'" alt="">
                     <div class="details">
                     <p>'. $row['msg'] .'</p>
                     </div>
                     </div>
-                    <img class="media-in" src="media/'.$row['media'].'" alt="">
+                    <img class="media-in" src="../assets/media/'.$row['media'].'" alt="">
                     ';
                 }
             }
@@ -58,7 +53,7 @@ if (empty($Dimage)) {
         }
         echo $output;
     }else{
-        header("location: ../index.php");
+        header("location: ../../index.html");
     }
     
 

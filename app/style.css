@@ -22,7 +22,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: var(--light-three);
+  background: var(--light-one);
   padding: 0 10px;
 }
 .wrapper{
@@ -67,7 +67,7 @@ body{
 }
 .users header .logout{
   display: block;
-  background: var(--main-color);
+  background: var(--main-two);
   color: #fff;
   outline: none;
   border: none;
@@ -112,13 +112,13 @@ body{
   cursor: pointer;
   border: none;
   background: #fff;
-  color: var(--main-color);
+  color: var(--main-two);
   outline: none;
   border-radius: 0 5px 5px 0;
   transition: all 0.2s ease;
 }
 .users .search button.active{
-  background: var(--main-color);
+  background: var(--main-two);
   color: #fff;
 }
 .search button.active i::before{
@@ -164,13 +164,13 @@ body{
   padding: 18px 30px;
 }
 .chat-area header .back-icon{
-  color: var(--main-color);
+  color: var(--main-two);
   font-size: 18px;
 }
 
 .chat-area header .logout{
   display: block;
-  background: var(--main-color);
+  background: var(--main-two);
   color: #fff;
   outline: none;
   border: none;
@@ -229,7 +229,7 @@ body{
   max-width: calc(100% - 130px);
 }
 .outgoing .details p{
-  background: var(--main-color);
+  background: var(--main-two);
   color: #fff;
   border-radius: 18px 18px 0 18px;
 }
@@ -321,7 +321,7 @@ display:inline-flex;
 }
 
 .upload{
-  color: var(--main-color) !important;
+  color: var(--main-two) !important;
   width: 55px;
   border: none;
   outline: none;

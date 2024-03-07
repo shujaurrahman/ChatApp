@@ -71,8 +71,8 @@
     </section>
   </div>
 </body>
-<script src="../app/javascript/pass-show-hide.js"></script>
-<script src="../app/javascript/signup.js"></script>
+<script src="../assets/js/pass-show-hide.js"></script>
+<script src="../assets/js/signup.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
