@@ -30,18 +30,18 @@
           <h2>Enter Code→
           </h2>
           <form action="" method="POST" autocomplete="off">
-          <div class="error-text"></div>
             <?php
+            session_start();
             if (isset($_SESSION['email'])) {
-              $info = "We've sent a verification code to your email -$email";
-              echo $email,$info;
+              $email=$_SESSION['email'];
+              $info = "We've sent a verification code to your email - $email";}
+              else{
+                $info;
+              }
               ?>
               <div class="error-text">
                 <?php echo $info; ?>
               </div>
-              <?php
-            }
-            ?>
             <div class="inputContainer">
               <input type="text" class="inputLogin" placeholder=" " name="otp">
               <label class="labelLogin">Verification Code </label>
