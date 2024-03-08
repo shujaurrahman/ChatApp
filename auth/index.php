@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Re</title>
+    <title>Forgot Password</title>
     <link rel="stylesheet" href="../assets/css/form.css">
     <style>
             #login #formLogin{
@@ -18,20 +18,25 @@ h3 {
   </head>
   <body>
   <div class="wrapper">
+  <section class="form signup">
     <div id="login">
         <div id="formLogin">
 
             <h2>Reset Password →
             </h2>
-
+            <form action="" method="POST" autocomplete="off">
+            <div class="error-text">
+              </div>
             <div class="inputContainer">
-                <input type="text" class="inputLogin" placeholder=" ">
+                <input type="text" class="inputLogin" placeholder=" " name="email">
                 <label class="labelLogin">Registered Email </label>
             </div>
+            <div class="field button">
             <input type="submit" class="submitButton" value="Rest Password">
+            </div>
             <div class="register">
             </div>
-
+           </form>
             <div class="register">
             <span class="breaker">
               <b>Go Back to Sign In</b>
@@ -41,6 +46,8 @@ h3 {
 
         </div>
     </div>
+    </section>
   </div>
   </body>
+<script src="js/forgotpass.js"></script>
 </html>
