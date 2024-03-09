@@ -1,4 +1,6 @@
 <?php 
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 require_once "../assets/config.php"; 
 session_start();
 $email = $_SESSION['email'];
@@ -11,6 +13,7 @@ if($email == false){
         if(mysqli_num_rows($code_res)>0){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $fetch_code = $fetch_data['code'];
+            $name=$fetch_data['fname'];
             $unique_id=$fetch_data['unique_id'];
             $code = 0;
             $status = "Active now";
@@ -18,6 +21,9 @@ if($email == false){
             $update_res = mysqli_query($conn, $update_otp);
             if($update_res){
                 $_SESSION['unique_id']=$unique_id;
+                $msg="Welcome $name, Ready for some gossip?";
+                $_SESSION['msg']=$msg;
+                $_SESSION['msg_display_time'] = time() + 5;
                 echo "success";
             }
             else{
