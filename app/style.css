@@ -10,6 +10,7 @@
   --light-three: #E3FDFD;
   --light-four: #71C9CE;
 }
+
 *{
   margin: 0;
   padding: 0;
@@ -404,3 +405,4 @@ display:inline-flex;
     width: 45px;
   }
 }
+

@@ -27,17 +27,17 @@ body {
     padding: 0 10px;
 }
 
-.error-text {
-    color: #721c24;
+.error-text{
+    color: #fff;
     /* color: var(--majorelle-blue); */
     padding: 10px 10px;
     text-align: center;
     border-radius: 15px;
-    background: #f8d7da;
+    background: #7861bd;
     border: 1px solid #f5c6cb;
     margin-bottom: 20px;
     display: none;
-}
+  }
 
 #login {
     display: flex;
@@ -164,10 +164,14 @@ a {
 a:hover {
     color: black !important;
 }
-
+#login #formLogin .submitButton{
+    font-weight: bold;
+    color: #fff;
+}
 #login #formLogin .submitButton:hover {
     border-radius: 5px;
-
+    font-weight: normal;
+    color: black;
 }
 
 #login #formLogin .inputLogin:focus+.labelLogin {
