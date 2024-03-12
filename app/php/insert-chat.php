@@ -9,7 +9,7 @@
         $message = mysqli_real_escape_string($conn, $_POST['message']);
         $image = $_FILES["media"]["name"];
         $tmpName = $_FILES["media"]["tmp_name"];
-        $path='../assets/media/';
+        $path='../../assets/media/';
         $imageName=$image;
         if(!empty($message)){
             $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg ,media)

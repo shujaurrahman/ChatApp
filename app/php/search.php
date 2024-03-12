@@ -1,6 +1,8 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     session_start();
-    include_once "../../assets/conn.php";
+    include_once "../../assets/config.php";
 
     $outgoing_id = $_SESSION['unique_id'];
     $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
