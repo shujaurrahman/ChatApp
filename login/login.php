@@ -15,6 +15,9 @@
                 $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$row['unique_id']}");
                 if($sql2){
                     $_SESSION['unique_id'] = $row['unique_id'];
+                    $msg="Welcome Back $name, Continue Chatting!";
+                    $_SESSION['msg']=$msg;
+                    $_SESSION['msg_display_time'] = time() + 5;
                     echo "success";
                 }else{
                     echo "Something went wrong. Please try again!";
