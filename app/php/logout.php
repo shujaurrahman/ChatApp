@@ -9,7 +9,7 @@
             if($sql){
                 session_unset();
                 session_destroy(); 
-                header("location: ../../login/");
+                header("location: ../../index.html");
             }
         }else{
             header("location: ../users.php");

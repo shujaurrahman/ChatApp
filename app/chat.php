@@ -2,7 +2,7 @@
   session_start();
   include_once "../assets/config.php";
   if(!isset($_SESSION['unique_id'])){
-    header("location: ../index.php");
+    header("location: ../index.html");
   }
 
 ?>
