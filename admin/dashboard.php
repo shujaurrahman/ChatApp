@@ -1,3 +1,8 @@
+<?php
+    require "./dbAdmin.php";
+    session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>*{
+    <style>{
         --bs-link-color: #212529;
         --bs-nav-pills-link-active-bg: #212529;
     }
@@ -40,16 +45,10 @@
     </style>
   </head>
   <body>
-    <nav class="bg-body-tertiary">
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><button type="button" class="btn btn-outline-dark">Chat</button></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><button type="button" class="btn btn-outline-dark">Logout</button></a>
-            </li>
-        </ul>
-    </nav>
+    <?php
+    include_once "nav.php";
+    ?>
+
     <div class="section ">
         <div class="d-flex align-items-start">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
