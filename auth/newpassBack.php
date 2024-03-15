@@ -4,7 +4,7 @@
 session_start();
 $email = $_SESSION['email'];
 if($email == false){
-  header('Location: ../index.html');
+  header('Location: ../index.php');
 }
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
