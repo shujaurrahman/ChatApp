@@ -5,7 +5,7 @@ $boolLoggedIn = false;
 if (isset($_SESSION) and isset($_SESSION['unique_id'])) {
 	$Userid = $_SESSION['unique_id'];
 } else {
-	  header("Location: ../../index.html");
+	  header("Location: ../../index.php");
 }
 if (isset($_SESSION['unique_id'])) {
 	$sql = "SELECT * FROM `users` Where unique_id ='$Userid'";
@@ -53,7 +53,7 @@ if (isset($_SESSION['unique_id'])) {
         }
         echo $output;
     }else{
-        header("location: ../../index.html");
+        header("location: ../../index.php");
     }
     
 
