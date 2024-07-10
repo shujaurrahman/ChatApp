@@ -1,15 +1,15 @@
 <?php
- error_reporting(E_ALL); 
- ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require './assets/config.php';
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST["name"];
   $email = $_POST["email"];
   $mssg = $_POST["msg"];
 
   $sql = "INSERT INTO contacus (`name`,`email`,`mssg`)
           VALUES('$name','$email','$mssg');";
-  $result = mysqli_query($conn,$sql);
+  $result = mysqli_query($conn, $sql);
 
 }
 ?>
@@ -125,7 +125,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <h3 class="h3 card-title">Grow your social</h3>
 
                 <p class="card-text">
-                Git along with more than one chitty-buddy and explore the different world out there.
+                  Git along with more than one chitty-buddy and explore the different world out there.
                 </p>
 
               </div>
@@ -178,7 +178,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
           <h2 class="h2 section-title">Contact Us</h2>
 
           <p class="section-text">
-            In you need me I am always there to help. I appear as Shujaurrahman in every friendlist while i am not active there raise a querry 
+            In you need me I am always there to help. I appear as Shujaurrahman in every friendlist while i am not
+            active there raise a querry
             or report any unusal activity or bug.
           </p>
 
@@ -205,8 +206,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
               <label for="message">Message*</label>
 
-              <textarea name="msg" id="message" required placeholder="Type Your Message"
-                class="input-field"></textarea>
+              <textarea name="msg" id="message" required placeholder="Type Your Message" class="input-field"></textarea>
 
               <button type="submit" class="btn btn-primary">
                 <span>Send Message</span>
